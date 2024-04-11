@@ -64,10 +64,10 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
-    - images/flower.jpg
-    - images/pat1.jpg
-    - images/pat2.jpg
-    - images/pat3.jpg
+    - assets/images/flower.jpg
+    - assets/images/pat1.jpg
+    - assets/images/pat2.jpg
+    - assets/images/pat3.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

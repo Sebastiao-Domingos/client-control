@@ -59,18 +59,50 @@ class _ClientsPageState extends State<ClientsPage> {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(child: Text("${clientes[index].name}")),
-                            Text(
-                              "${clientes[index].phone}",
-                              style: TextStyle(fontSize: 12),
+                            Container(
+                                child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("${clientes[index].name}"),
+                                Text(
+                                  "${clientes[index].about.substring(
+                                        1,
+                                        30,
+                                      )}...",
+                                  style: TextStyle(fontSize: 10),
+                                )
+                              ],
+                            )),
+                            Row(
+                              children: [
+                                Container(
+                                  margin:
+                                      const EdgeInsets.fromLTRB(0, 0, 12, 0),
+                                  child: Icon(
+                                    Icons.edit,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.delete,
+                                  color: Colors.red,
+                                ),
+                              ],
                             )
                           ],
                         ),
                         hoverColor: Colors.black12,
                         contentPadding: const EdgeInsets.fromLTRB(0, 6, 0, 6),
                         onTap: () {
-                          Navigator.pushNamed(context, ClientPage.routeName,
-                              arguments: Argumentos(clientes[index]));
+                          // Navigator.pushNamed(context, ClientPage.routeName,
+                          //     arguments: Argumentos(clientes[index]));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ClientPage(client: clientes[index]),
+                              ));
                         },
                       ),
                     );

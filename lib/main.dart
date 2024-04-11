@@ -28,7 +28,6 @@ class _MyAppState extends State<MyApp> {
       routes: {
         "/": (context) => Home(),
         "/clients": (context) => ClientsPage(),
-        ClientPage.routeName: (context) => ClientPage()
       },
     );
   }
